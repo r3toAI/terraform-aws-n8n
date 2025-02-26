@@ -115,7 +115,7 @@ resource "aws_ecs_service" "service" {
   network_configuration {
     subnets = module.vpc.public_subnets
     security_groups = [
-      aws_security_group.r3to.id
+      aws_security_group.n8n.id
     ]
     // this way we dont need a NAT gateway or VPC endpoint for pulling the images
     // traffic is only allowed from the LB anyway so this is safe
