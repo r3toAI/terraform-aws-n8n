@@ -59,7 +59,7 @@ resource "aws_ecs_task_definition" "taskdef" {
         options = {
           awslogs-group         = aws_cloudwatch_log_group.logs.name
           awslogs-region        = data.aws_region.current.name
-          awslogs-stream-prefix = "n8n"
+          awslogs-stream-prefix = "${var.prefix}"
         }
       }
     }
