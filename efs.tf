@@ -33,7 +33,7 @@ resource "aws_efs_mount_target" "mount" {
 resource "aws_efs_access_point" "access" {
   file_system_id = aws_efs_file_system.main.id
   root_directory {
-    path = "/n8n"
+    path = "/${var.prefix}"
     creation_info {
       owner_gid   = 1000
       owner_uid   = 1000

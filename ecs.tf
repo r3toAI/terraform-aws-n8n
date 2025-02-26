@@ -115,7 +115,7 @@ resource "aws_ecs_service" "service" {
   network_configuration {
     subnets = module.vpc.public_subnets
     security_groups = [
-      aws_security_group.n8n.id
+      aws_security_group.${var.prefix}.id
     ]
     // this way we dont need a NAT gateway or VPC endpoint for pulling the images
     // traffic is only allowed from the LB anyway so this is safe
@@ -123,7 +123,7 @@ resource "aws_ecs_service" "service" {
   }
   load_balancer {
     target_group_arn = aws_lb_target_group.ip.arn
-    container_name   = "n8n"
+    container_name   = "${var.prefix}"
     container_port   = 5678
   }
 }
