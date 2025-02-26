@@ -6,6 +6,6 @@ module "n8n" {
   version = "2.0.2"
   certificate_arn = "arn:aws:acm:eu-central-2:311141537066:certificate/f72c247a-17f8-48a0-a298-296bad22fe4d"
   container_image = "1.80.3"
-  prefix = "r3to-worker-01"
+  prefix = "r3to-work-01"
   url = "engine.r3to.org"
 }
